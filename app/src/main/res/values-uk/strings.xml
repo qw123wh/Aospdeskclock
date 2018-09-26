@@ -348,7 +348,7 @@
     <item msgid="5487724896895412089">"Уральськ"</item>
     <item msgid="364906869710826982">"Єкатеринбург"</item>
     <item msgid="2106505051751383358">"Колката"</item>
-    <item msgid="6851586621581501447">"Шри-Ланка"</item>
+    <item msgid="6851586621581501447">"Шрі-Ланка"</item>
     <item msgid="800438544128213134">"Катманду"</item>
     <item msgid="6173621471007643021">"Астана"</item>
     <item msgid="8645125891971581128">"Янгон"</item>
@@ -408,9 +408,9 @@
     <string name="alarm_undo" msgid="5710042601177655254">"відмінити"</string>
     <string name="alarm_deleted" msgid="6131529309389084785">"Будильник видалено"</string>
     <string name="world_day_of_week_label" msgid="5911196322328341288">"/ <xliff:g id="LABEL">%s</xliff:g>"</string>
-    <string name="world_time_ahead" msgid="625559988238637652">"Залишилося <xliff:g id="TIME">%1$s</xliff:g>"</string>
+    <string name="world_time_ahead" msgid="625559988238637652">"На <xliff:g id="TIME">%1$s</xliff:g> пізніше"</string>
     <string name="world_time_behind" msgid="5395771290726167865">"Минуло <xliff:g id="TIME">%1$s</xliff:g>"</string>
-    <string name="world_hours_minutes_ahead" msgid="5132012793021696377">"Залишилося <xliff:g id="HOURS">%1$s</xliff:g> <xliff:g id="MINUTES">%2$s</xliff:g>"</string>
+    <string name="world_hours_minutes_ahead" msgid="5132012793021696377">"На <xliff:g id="HOURS">%1$s</xliff:g> <xliff:g id="MINUTES">%2$s</xliff:g> пізніше"</string>
     <string name="world_hours_minutes_behind" msgid="8978567362140923698">"Минуло <xliff:g id="HOURS">%1$s</xliff:g> <xliff:g id="MINUTES">%2$s</xliff:g>"</string>
     <string name="world_hours_tomorrow" msgid="2504465609269004794">"Завтра, <xliff:g id="TIME">%1$s</xliff:g>"</string>
     <string name="world_hours_yesterday" msgid="4425086322610882745">"Учора, <xliff:g id="TIME">%1$s</xliff:g>"</string>
@@ -427,8 +427,16 @@
     <string name="alarm_is_dismissed" msgid="5509897230565826642">"Будильник на <xliff:g id="ALARM_TIME">%s</xliff:g> вимкнено"</string>
     <string name="alarm_is_set" msgid="5503226382620011088">"Будильник установлено на <xliff:g id="ALARM_TIME">%s</xliff:g>"</string>
     <string name="timer_created" msgid="4381027137335885547">"Таймер створено"</string>
+    <plurals name="expired_timers_dismissed" formatted="false" msgid="1294953410988488149">
+      <item quantity="one">Вимкнено <xliff:g id="NUMBER">%d</xliff:g> таймер</item>
+      <item quantity="few">Вимкнено <xliff:g id="NUMBER">%d</xliff:g> таймери</item>
+      <item quantity="many">Вимкнено <xliff:g id="NUMBER">%d</xliff:g> таймерів</item>
+      <item quantity="other">Вимкнено <xliff:g id="NUMBER">%d</xliff:g> таймера</item>
+    </plurals>
     <string name="timer_deleted" msgid="9110322362460029392">"Таймер видалено"</string>
     <string name="invalid_timer_length" msgid="3104567893212932487">"Недійсна тривалість таймера"</string>
+    <string name="invalid_timer" msgid="900957020728335675">"Вибрано недійсний таймер"</string>
+    <string name="no_expired_timers" msgid="4624192298397846876">"Немає використаних таймерів"</string>
     <string name="alarm_cant_be_dismissed_still_more_than_24_hours_away" msgid="8810520940995307437">"Будильник на <xliff:g id="ALARM_TIME">%s</xliff:g> ще не можна вимкнути, оскільки він має спрацювати більше ніж через 24 години"</string>
     <string name="dismiss_alarm" msgid="7204593078688533541">"Вимкнути будильник"</string>
     <string name="pick_alarm_to_dismiss" msgid="5408769235866082896">"Виберіть, який будильник вимкнути"</string>

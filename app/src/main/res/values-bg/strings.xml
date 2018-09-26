@@ -66,14 +66,14 @@
     <string name="timer_remaining_single" msgid="6782851171906765864">"Остава"</string>
     <string name="timer_remaining_multiple" msgid="6052775962092160851">"Остават"</string>
   <string-array name="alarm_set">
-    <item msgid="6450913786084215050">"Будилникът e настроен за след по-малко от минута."</item>
-    <item msgid="6002066367368421848">"Будилникът е настроен за след <xliff:g id="DAYS">%1$s</xliff:g>."</item>
-    <item msgid="8824719306247973774">"Будилникът е настроен за след <xliff:g id="HOURS">%2$s</xliff:g>."</item>
-    <item msgid="8182406852935468862">"Будилникът е настроен за след <xliff:g id="DAYS">%1$s</xliff:g> и <xliff:g id="HOURS">%2$s</xliff:g>."</item>
-    <item msgid="2532279224777213194">"Будилникът е настроен за след <xliff:g id="MINUTES">%3$s</xliff:g>."</item>
-    <item msgid="5936557894247187717">"Будилникът е настроен за след <xliff:g id="DAYS">%1$s</xliff:g> и <xliff:g id="MINUTES">%3$s</xliff:g>."</item>
-    <item msgid="9115697840826129603">"Будилникът е настроен за след <xliff:g id="HOURS">%2$s</xliff:g> и <xliff:g id="MINUTES">%3$s</xliff:g>."</item>
-    <item msgid="2332583385137381060">"Будилникът е настроен за след <xliff:g id="DAYS">%1$s</xliff:g>, <xliff:g id="HOURS">%2$s</xliff:g> и <xliff:g id="MINUTES">%3$s</xliff:g>."</item>
+    <item msgid="6450913786084215050">"Будилникът e настроен да звъни след по-малко от минута."</item>
+    <item msgid="6002066367368421848">"Будилникът е настроен да звъни след <xliff:g id="DAYS">%1$s</xliff:g>."</item>
+    <item msgid="8824719306247973774">"Будилникът е настроен да звъни след <xliff:g id="HOURS">%2$s</xliff:g>."</item>
+    <item msgid="8182406852935468862">"Будилникът е настроен да звъни след <xliff:g id="DAYS">%1$s</xliff:g> и <xliff:g id="HOURS">%2$s</xliff:g>."</item>
+    <item msgid="2532279224777213194">"Будилникът е настроен да звъни след <xliff:g id="MINUTES">%3$s</xliff:g>."</item>
+    <item msgid="5936557894247187717">"Будилникът е настроен да звъни след <xliff:g id="DAYS">%1$s</xliff:g> и <xliff:g id="MINUTES">%3$s</xliff:g>."</item>
+    <item msgid="9115697840826129603">"Будилникът ще се включи след <xliff:g id="HOURS">%2$s</xliff:g> и <xliff:g id="MINUTES">%3$s</xliff:g>."</item>
+    <item msgid="2332583385137381060">"Будилникът е настроен да звъни след <xliff:g id="DAYS">%1$s</xliff:g>, <xliff:g id="HOURS">%2$s</xliff:g> и <xliff:g id="MINUTES">%3$s</xliff:g>."</item>
   </string-array>
     <plurals name="days" formatted="false" msgid="3706846447285206235">
       <item quantity="other"><xliff:g id="NUMBER">%s</xliff:g> дни</item>
@@ -263,7 +263,7 @@
     <string name="open_date_settings" msgid="7712226973337806152">"Промяна на датата и часа"</string>
   <string-array name="clock_style_entries">
     <item msgid="917900462224167608">"Аналогов"</item>
-    <item msgid="8483930821046925592">"Цифров"</item>
+    <item msgid="8483930821046925592">"Дигитален"</item>
   </string-array>
     <string name="automatic_home_clock" msgid="6274174710735449252">"Часът у дома"</string>
     <string name="automatic_home_clock_summary" msgid="6020476321040807273">"При пътуване в район с различно часово време добавете часовник за времето у дома"</string>
@@ -409,8 +409,14 @@
     <string name="alarm_is_dismissed" msgid="5509897230565826642">"Будилникът за <xliff:g id="ALARM_TIME">%s</xliff:g> е премахнат"</string>
     <string name="alarm_is_set" msgid="5503226382620011088">"Будилникът е зададен за <xliff:g id="ALARM_TIME">%s</xliff:g>"</string>
     <string name="timer_created" msgid="4381027137335885547">"Таймерът е създаден"</string>
+    <plurals name="expired_timers_dismissed" formatted="false" msgid="1294953410988488149">
+      <item quantity="other"><xliff:g id="NUMBER">%d</xliff:g> таймера са отхвърлени</item>
+      <item quantity="one">Таймерът е отхвърлен</item>
+    </plurals>
     <string name="timer_deleted" msgid="9110322362460029392">"Таймерът е изтрит"</string>
     <string name="invalid_timer_length" msgid="3104567893212932487">"Невалидна продължителност на таймера"</string>
+    <string name="invalid_timer" msgid="900957020728335675">"Избран е невалиден таймер"</string>
+    <string name="no_expired_timers" msgid="4624192298397846876">"Няма изтекли таймери"</string>
     <string name="alarm_cant_be_dismissed_still_more_than_24_hours_away" msgid="8810520940995307437">"Все още не можете да премахнете будилника за <xliff:g id="ALARM_TIME">%s</xliff:g>, тъй като остават над 24 часа до задействането му"</string>
     <string name="dismiss_alarm" msgid="7204593078688533541">"Отхвърляне на будилника"</string>
     <string name="pick_alarm_to_dismiss" msgid="5408769235866082896">"Изберете кой будилник да отхвърлите"</string>
