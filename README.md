@@ -1,4 +1,4 @@
 # Deskclock
-AOSP project packages/apps/Deskclock
-use gradle to manage project, compile in Android Studio,
-and change the package name from com.android to com.chen in order to install on all device
+Fork of aosp clock. Package name changed, added power off alarm function(alarm will ring with phone off, snapdragon phones only, tested on lineageos)
+
+Thanks to Chen Luo for creating the original fork https://github.com/Chen-Luo/Deskclock
