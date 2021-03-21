@@ -34,7 +34,6 @@ import com.chen.deskclock.AlarmClockFragment;
 import com.chen.deskclock.AlarmUtils;
 import com.chen.deskclock.DeskClock;
 import com.chen.deskclock.LogUtils;
-import com.chen.deskclock.NotificationUtils;
 import com.chen.deskclock.R;
 import com.chen.deskclock.Utils;
 import com.chen.deskclock.provider.Alarm;
