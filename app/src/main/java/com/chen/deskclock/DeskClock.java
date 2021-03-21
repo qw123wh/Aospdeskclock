@@ -22,6 +22,7 @@ import android.animation.AnimatorSet;
 import android.animation.ValueAnimator;
 import android.app.Fragment;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.annotation.StringRes;
@@ -48,6 +49,7 @@ import com.chen.deskclock.data.DataModel;
 import com.chen.deskclock.data.DataModel.SilentSetting;
 import com.chen.deskclock.data.OnSilentSettingsListener;
 import com.chen.deskclock.events.Events;
+import com.chen.deskclock.LogUtils;
 import com.chen.deskclock.provider.Alarm;
 import com.chen.deskclock.uidata.TabListener;
 import com.chen.deskclock.uidata.UiDataModel;
@@ -127,6 +129,12 @@ public class DeskClock extends BaseActivity
     /** {@code true} when a settings change necessitates recreating this activity. */
     private boolean mRecreateActivity;
 
+
+    private static final String PERMISSION_POWER_OFF_ALARM =
+            "org.codeaurora.permission.POWER_OFF_ALARM";
+
+    private static final int CODE_FOR_ALARM_PERMISSION = 1;
+    
     @Override
     public void onNewIntent(Intent newIntent) {
         super.onNewIntent(newIntent);
@@ -142,6 +150,8 @@ public class DeskClock extends BaseActivity
         setContentView(R.layout.desk_clock);
         mSnackbarAnchor = findViewById(R.id.content);
 
+        checkPermissions();
+        
         // Configure the toolbar.
         final Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -458,6 +468,21 @@ public class DeskClock extends BaseActivity
         if (requestCode == SettingsMenuItemController.REQUEST_CHANGE_SETTINGS
                 && resultCode == RESULT_OK) {
             mRecreateActivity = true;
+        }
+    }
+
+    private void checkPermissions() {
+        if (checkSelfPermission(PERMISSION_POWER_OFF_ALARM)
+                != PackageManager.PERMISSION_GRANTED) {
+            requestPermissions(new String[]{PERMISSION_POWER_OFF_ALARM}, CODE_FOR_ALARM_PERMISSION);
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode,
+                                           String permissions[], int[] grantResults) {
+        if (requestCode == CODE_FOR_ALARM_PERMISSION){
+            LogUtils.i("Power off alarm permission is granted.");
         }
     }
 

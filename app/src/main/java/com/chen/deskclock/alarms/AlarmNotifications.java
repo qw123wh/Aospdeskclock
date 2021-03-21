@@ -15,8 +15,14 @@
  */
 package com.chen.deskclock.alarms;
 
+import static com.chen.deskclock.NotificationUtils.ALARM_MISSED_NOTIFICATION_CHANNEL_ID;
+import static com.chen.deskclock.NotificationUtils.ALARM_SNOOZE_NOTIFICATION_CHANNEL_ID;
+import static com.chen.deskclock.NotificationUtils.ALARM_UPCOMING_NOTIFICATION_CHANNEL_ID;
+import static com.chen.deskclock.NotificationUtils.FIRING_NOTIFICATION_CHANNEL_ID;
+
 import android.annotation.TargetApi;
 import android.app.Notification;
+import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.app.Service;
@@ -33,6 +39,7 @@ import com.chen.deskclock.AlarmClockFragment;
 import com.chen.deskclock.AlarmUtils;
 import com.chen.deskclock.DeskClock;
 import com.chen.deskclock.LogUtils;
+import com.chen.deskclock.NotificationUtils;
 import com.chen.deskclock.R;
 import com.chen.deskclock.Utils;
 import com.chen.deskclock.provider.Alarm;
@@ -43,7 +50,7 @@ import java.text.SimpleDateFormat;
 import java.util.Locale;
 import java.util.Objects;
 
-final class AlarmNotifications {
+public final class AlarmNotifications {
     static final String EXTRA_NOTIFICATION_ID = "extra_notification_id";
 
     /**
@@ -438,7 +445,7 @@ final class AlarmNotifications {
         service.startForeground(ALARM_FIRING_NOTIFICATION_ID, notification.build());
     }
 
-    static synchronized void clearNotification(Context context, AlarmInstance instance) {
+    public static synchronized void clearNotification(Context context, AlarmInstance instance) {
         LogUtils.v("Clearing notifications for alarm instance: " + instance.mId);
         NotificationManagerCompat nm = NotificationManagerCompat.from(context);
         final int id = instance.hashCode();
