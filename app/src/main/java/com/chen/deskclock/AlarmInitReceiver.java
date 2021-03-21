@@ -18,16 +18,33 @@ package com.chen.deskclock;
 
 import android.annotation.SuppressLint;
 import android.content.BroadcastReceiver;
+import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
 import android.os.PowerManager.WakeLock;
 
 import com.chen.deskclock.alarms.AlarmStateManager;
+import com.chen.deskclock.alarms.AlarmNotifications;
 import com.chen.deskclock.controller.Controller;
 import com.chen.deskclock.data.DataModel;
+import com.chen.deskclock.NotificationUtils;
+import com.chen.deskclock.provider.AlarmInstance;
+
+import java.util.Calendar;
+import java.util.List;
 
 public class AlarmInitReceiver extends BroadcastReceiver {
 
+    private static final String ACTION_UPDATE_ALARM_STATUS =
+            "org.codeaurora.poweroffalarm.action.UPDATE_ALARM";
+
+    private static final int SNOOZE_STATUS = 2;
+    private static final int DISMISS_STATUS = 3;
+
+    private static final String STATUS = "status";
+    private static final String TIME = "time";
+    private static final String SNOOZE_TIME = "snooze_time";
+    
     /**
      * When running on N devices, we're interested in the boot completed event that is sent while
      * the user is still locked, so that we can schedule alarms.
@@ -74,6 +91,7 @@ public class AlarmInitReceiver extends BroadcastReceiver {
         if (Intent.ACTION_BOOT_COMPLETED.equals(action)
                 || Intent.ACTION_LOCALE_CHANGED.equals(action)) {
             Controller.getController().updateShortcuts();
+            NotificationUtils.updateNotificationChannels(context);
         }
 
         // Notifications are canceled by the system on application upgrade. This broadcast signals
@@ -83,6 +101,41 @@ public class AlarmInitReceiver extends BroadcastReceiver {
         if (Intent.ACTION_MY_PACKAGE_REPLACED.equals(action)) {
             DataModel.getDataModel().updateAllNotifications();
             Controller.getController().updateShortcuts();
+        }
+
+       // Update alarm status once receive the status update broadcast
+        if (ACTION_UPDATE_ALARM_STATUS.equals(action)) {
+            long alarmTime = intent.getLongExtra(TIME, 0L);
+            int alarmStatus = intent.getIntExtra(STATUS, 0);
+
+            if (alarmTime != 0) {
+                ContentResolver cr = context.getContentResolver();
+                List<AlarmInstance> alarmInstances = AlarmInstance.getInstances(cr, null);
+                AlarmInstance alarmInstance = null;
+                for (AlarmInstance instance : alarmInstances) {
+                    if (instance.getAlarmTime().getTimeInMillis() == alarmTime) {
+                        alarmInstance = instance;
+                        break;
+                    }
+                }
+
+                if (alarmInstance != null) {
+                    // Update alarm status if the alarm instance is not null
+                    if (alarmStatus == DISMISS_STATUS) {
+                        AlarmStateManager.setDismissState(context, alarmInstance);
+                    } else if (alarmStatus == SNOOZE_STATUS) {
+                        long snoozeTime = intent.getLongExtra(SNOOZE_TIME, 0L);
+                        if (snoozeTime > System.currentTimeMillis()) {
+                            AlarmNotifications.clearNotification(context, alarmInstance);
+                            Calendar c = Calendar.getInstance();
+                            c.setTimeInMillis(snoozeTime);
+                            alarmInstance.setAlarmTime(c);
+                            alarmInstance.mAlarmState = AlarmInstance.SNOOZE_STATE;
+                            AlarmInstance.updateInstance(cr, alarmInstance);
+                        }
+                    }
+                }
+            }
         }
 
         AsyncHandler.post(new Runnable() {
