@@ -15,11 +15,6 @@
  */
 package com.chen.deskclock.alarms;
 
-import static com.chen.deskclock.NotificationUtils.ALARM_MISSED_NOTIFICATION_CHANNEL_ID;
-import static com.chen.deskclock.NotificationUtils.ALARM_SNOOZE_NOTIFICATION_CHANNEL_ID;
-import static com.chen.deskclock.NotificationUtils.ALARM_UPCOMING_NOTIFICATION_CHANNEL_ID;
-import static com.chen.deskclock.NotificationUtils.FIRING_NOTIFICATION_CHANNEL_ID;
-
 import android.annotation.TargetApi;
 import android.app.Notification;
 import android.app.NotificationChannel;
