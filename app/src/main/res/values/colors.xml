@@ -32,7 +32,7 @@
 
     <color name="clock_gray">#B3FFFFFF</color>
 
-    <color name="default_background">#1A237E</color>
+    <color name="default_background">#0E1111</color>
 
     <!-- shadowColor for widget text -->
     <color name="widget_shadow_color">#67000000</color>
