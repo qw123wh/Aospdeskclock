@@ -6,4 +6,4 @@ Thanks to Chen Luo for creating the original fork https://github.com/Chen-Luo/De
 Thanks to EthanArmbrust for contributing  https://github.com/EthanArmbrust/DeskClock
 
 Anyone is welcome to improve the app. Forks, pull requests, and additional functions are appreciated.
-I'm not a developer (it was a stroke of luck to be able to generate the apk)
+I'm not a developer and I'm not very experienced
