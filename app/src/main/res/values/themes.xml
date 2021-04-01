@@ -28,7 +28,7 @@
         <item name="android:windowContentOverlay">@null</item>
 
         <!-- Attributes from android.support.v7.appcompat -->
-        <item name="colorAccent">#DA4336</item>
+        <item name="colorAccent">#2B65EC</item>
         <item name="colorBackgroundFloating">#303030</item>
         <item name="colorControlActivated">@android:color/white</item>
         <item name="colorControlNormal">?android:attr/textColorPrimary</item>
