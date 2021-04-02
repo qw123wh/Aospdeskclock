@@ -1,0 +1,7 @@
+<i>Deskclock</i> is a fork of the AOSP clock, so it offers all its functions:
+
+* alarms
+* stop-watch
+* count-down "timer" (aka "tea timer")
+
+Additionally, it adds "power-off alarm function" (alarm will ring with phone off, Snapdragon phones only, tested on LineageOS and should work on all AOSP ROMs; currently does not work on MIUI).
