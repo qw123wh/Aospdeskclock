@@ -453,10 +453,23 @@
     </string-array>
 
     <!-- Values for the side-button setting. -->
-    <string-array name="volume_button_setting_values" translatable="false">
+    <string-array name="volume_button_setting_values" tools:ignore="MissingTranslation">
         <item>1</item>
         <item>2</item>
         <item>0</item>
+    </string-array>
+  
+  <!-- Setting title for the flip action setting. -->
+    <string name="flip_action_title" tools:ignore="MissingTranslation">Device flip action</string>
+
+    <!-- Setting title for the shake action setting. -->
+    <string name="shake_action_title" tools:ignore="MissingTranslation">Device shake action</string>
+
+    <!-- Entries listed in the setting flip and shake. -->
+    <string-array name="action_setting_entries" tools:ignore="MissingTranslation">
+        <item>Snooze</item>
+        <item>Dismiss</item>
+        <item>Nothing</item>
     </string-array>
 
     <!-- Accessibility labels for Clock activity buttons -->
