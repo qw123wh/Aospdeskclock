@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Copyright (C) 2009 The Android Open Source Project
-
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
      You may obtain a copy of the License at
@@ -86,7 +85,23 @@
             android:key="volume_button_setting"
             android:title="@string/volume_button_setting_title" />
 
+         <com.chen.deskclock.settings.SimpleMenuPreference
+            android:defaultValue="0"
+            android:dialogTitle="@string/flip_action_title"
+            android:entries="@array/action_setting_entries"
+            android:entryValues="@array/volume_button_setting_values"
+            android:key="flip_action"
+            android:title="@string/flip_action_title" />
+
         <com.chen.deskclock.settings.SimpleMenuPreference
+            android:defaultValue="0"
+            android:dialogTitle="@string/shake_action_title"
+            android:entries="@array/action_setting_entries"
+            android:entryValues="@array/volume_button_setting_values"
+            android:key="shake_action"
+            android:title="@string/shake_action_title" />
+
+         <com.chen.deskclock.settings.SimpleMenuPreference
             android:dialogTitle="@string/week_start_title"
             android:entries="@array/week_start_entries"
             android:entryValues="@array/week_start_values"
