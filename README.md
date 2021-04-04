@@ -6,7 +6,10 @@ Package name changed,made compatible with android studio.
 
 Features:the same ones on the aosp clock.
 
-Extra Features: "add power off alarm" (alarm will ring with phone off, snapdragon phones only, tested on all custom rom)
+Extra Features: 
+"add power off alarm" (alarm will ring with phone off, snapdragon phones only, tested on all custom rom)
+"add flip and shake" option for the alarm clock
+
 
 Thanks to Chen Luo for creating the original fork https://github.com/Chen-Luo/Deskclock
 
