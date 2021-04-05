@@ -1,7 +1,22 @@
 <i>Deskclock</i> is a fork of the AOSP clock, so it offers all its functions:
 
 * alarms
+* clock
 * stop-watch
 * count-down "timer" (aka "tea timer")
 
-Additionally, it adds "power-off alarm function" (alarm will ring with phone off, Snapdragon phones only, tested on LineageOS and should work on all AOSP ROMs; currently does not work on MIUI).
+Additionally, it adds:
+* "Power-off alarm function" (alarm will ring with phone off, Snapdragon phones only, tested on LineageOS and should work on all AOSP ROMs; currently does not work on MIUI).
+*Flip and shake action for alarm
+
+
+<b>Permissions used:</b>
+
+* <code>VIBRATE</code>: enable vibration when the alarm sounds
+* <code>WAKE_LOCK</code>, <code>DISABLE_KEYGUARD</code>: alarm notification when the screen is turned off
+* <code>POWER_OFF_ALARM</code>: make the alarm sound when the phone is off (supported devices only)
+* <code>RECEIVE_BOOT_COMPLETED</code>: register alarms on device start
+* <code>USE_FULL_SCREEN_INTENT</code>: needed with Android 10+ to show the alarm screen when an alarm fires
+
+A more detailed description can be found <a href='https://github.com/qw123wh/Aospdeskclock/blob/master/README.md'>in the repository's README</a>.
+
