@@ -29,20 +29,6 @@ import static android.media.AudioManager.STREAM_ALARM;
  * <p>This class also serves a second purpose. It accomplishes alarm ringtone playback using two
  * different mechanisms depending on the underlying platform.</p>
  *
- * <ul>
- *     <li>Prior to the M platform release, ringtone playback is accomplished using
- *     {@link MediaPlayer}. android.permission.READ_EXTERNAL_STORAGE is required to play custom
- *     ringtones located on the SD card using this mechanism. {@link MediaPlayer} allows clients to
- *     adjust the volume of the stream and specify that the stream should be looped.</li>
- *
- *     <li>Starting with the M platform release, ringtone playback is accomplished using
- *     {@link Ringtone}. android.permission.READ_EXTERNAL_STORAGE is <strong>NOT</strong> required
- *     to play custom ringtones located on the SD card using this mechanism. {@link Ringtone} allows
- *     clients to adjust the volume of the stream and specify that the stream should be looped but
- *     those methods are marked @hide in M and thus invoked using reflection. Consequently, revoking
- *     the android.permission.READ_EXTERNAL_STORAGE permission has no effect on playback in M+.</li>
- * </ul>
- *
  * <p>If either the {@link Ringtone} or {@link MediaPlayer} fails to play the requested audio, an
  * {@link #getFallbackRingtoneUri in-app fallback} is used because playing <strong>some</strong>
  * sort of noise is always preferable to remaining silent.</p>
