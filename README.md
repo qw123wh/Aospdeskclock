@@ -3,6 +3,7 @@
 Fork of aosp clock: https://android.googlesource.com/platform/packages/apps/DeskClock/
 
 Package name changed,made compatible with android studio.
+App includes alarm,clock, timer, stopwatch.
 
 Features:the same ones on the aosp clock.
 
