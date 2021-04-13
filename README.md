@@ -18,6 +18,15 @@ Thanks to EthanArmbrust for contributing  https://github.com/EthanArmbrust/DeskC
 Anyone is welcome to improve the app. Forks, pull requests, and additional functions are appreciated.
 I'm not a developer and I'm not very experienced.
 
+# Download on F-Droid
+
+[<img src="https://raw.githubusercontent.com/enricocid/fdroid-custom-badges/main/badge_get-it-on.png"
+    alt="Get it on F-Droid"
+    height="80">](https://f-droid.org/en/packages/com.chen.deskclock/)
+
+
+
+# Screenshot
 
 
 ![screenshot1](https://user-images.githubusercontent.com/59417474/113393656-40b6d200-9397-11eb-95b0-a36a7338fa9a.jpg)
