@@ -1,1 +1,1 @@
-a desk clock with alarms
+A fork of the AOSP clock
