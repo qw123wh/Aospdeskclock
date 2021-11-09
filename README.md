@@ -6,8 +6,6 @@ Package name changed,made compatible with android studio.
 App includes alarm,clock, timer, stopwatch.
 
 Features:the same ones on the aosp clock.
-test
-
 
 Extra Features: 
 "add power off alarm" (alarm will ring with phone off, snapdragon phones only, tested on all custom rom)
