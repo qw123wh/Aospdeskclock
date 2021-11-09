@@ -20,6 +20,7 @@ import android.content.Context;
 import android.content.res.ColorStateList;
 import android.content.res.Resources;
 import android.graphics.PorterDuff;
+import android.os.Vibrator;
 import android.support.annotation.IdRes;
 import android.support.v4.view.ViewCompat;
 import android.text.BidiFormatter;
@@ -158,6 +159,11 @@ public class TimerSetupView extends LinearLayout implements View.OnClickListener
 
     @Override
     public void onClick(View view) {
+        final Vibrator vibrator = (Vibrator) getContext().getSystemService(Context.VIBRATOR_SERVICE);
+
+        if (vibrator.hasVibrator()) {
+            vibrator.vibrate(10);
+        }
         if (view == mDeleteView) {
             delete();
         } else {
