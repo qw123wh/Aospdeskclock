@@ -29,4 +29,7 @@
         <attr name="radius" format="dimension" />
     </declare-styleable>
 
+    <attr name="colorControlActivated" />
+    <attr name="colorControlNormal" />
+    <attr name="dropdownPreferenceStyle" />
 </resources>
