@@ -1,5 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/Jawad/StudioProjects/Aospdeskclock/app/src/main/res/layout/screensaver_settings.xml" value="0.20520833333333333" />
+        <entry key="..\:/Users/Jawad/StudioProjects/Aospdeskclock/app/src/main/res/layout/settings.xml" value="0.20520833333333333" />
+        <entry key="..\:/Users/Jawad/StudioProjects/Aospdeskclock/app/src/main/res/layout/timer_setup_container.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Jawad/StudioProjects/Aospdeskclock/app/src/main/res/layout/timer_setup_digits.xml" value="0.20520833333333333" />
+        <entry key="..\:/Users/Jawad/StudioProjects/Aospdeskclock/app/src/main/res/layout/timer_setup_time.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Jawad/StudioProjects/Aospdeskclock/app/src/main/res/xml/screensaver_settings.xml" value="0.20520833333333333" />
+        <entry key="..\:/Users/Jawad/StudioProjects/Aospdeskclock/app/src/main/res/xml/settings.xml" value="0.33" />
+      </map>
+    </option>
+  </component>
   <component name="NullableNotNullManager">
     <option name="myDefaultNullable" value="android.support.annotation.Nullable" />
     <option name="myDefaultNotNull" value="android.support.annotation.NonNull" />
