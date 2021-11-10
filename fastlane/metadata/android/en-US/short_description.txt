@@ -1,1 +1,1 @@
-A fork of the AOSP clock
+app that contains: clock, alarm, timer, stopwatch
