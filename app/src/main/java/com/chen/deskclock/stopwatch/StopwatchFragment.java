@@ -26,6 +26,7 @@ import android.content.res.Resources;
 import android.graphics.Canvas;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
+import android.os.Vibrator;
 import android.support.annotation.ColorInt;
 import android.support.annotation.NonNull;
 import android.support.v4.graphics.ColorUtils;
@@ -317,6 +318,11 @@ public final class StopwatchFragment extends DeskClockFragment {
      * Start the stopwatch.
      */
     private void doStart() {
+        final Vibrator vibrator = (Vibrator) getActivity().getSystemService(Context.VIBRATOR_SERVICE);
+
+        if (vibrator.hasVibrator()) {
+            vibrator.vibrate(10);
+        }
         Events.sendStopwatchEvent(R.string.action_start, R.string.label_deskclock);
         DataModel.getDataModel().startStopwatch();
     }
@@ -325,6 +331,11 @@ public final class StopwatchFragment extends DeskClockFragment {
      * Pause the stopwatch.
      */
     private void doPause() {
+        final Vibrator vibrator = (Vibrator) getActivity().getSystemService(Context.VIBRATOR_SERVICE);
+
+        if (vibrator.hasVibrator()) {
+            vibrator.vibrate(10);
+        }
         Events.sendStopwatchEvent(R.string.action_pause, R.string.label_deskclock);
         DataModel.getDataModel().pauseStopwatch();
     }

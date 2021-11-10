@@ -16,6 +16,7 @@
 
 package com.chen.deskclock.timer;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.ColorStateList;
 import android.content.res.Resources;
@@ -181,6 +182,7 @@ public class TimerSetupView extends LinearLayout implements View.OnClickListener
         return false;
     }
 
+    @SuppressLint("NonConstantResourceId")
     private int getDigitForId(@IdRes int id) {
         switch (id) {
             case R.id.timer_setup_digit_0:

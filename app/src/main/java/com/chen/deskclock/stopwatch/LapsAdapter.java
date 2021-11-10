@@ -17,6 +17,7 @@
 package com.chen.deskclock.stopwatch;
 
 import android.content.Context;
+import android.os.Vibrator;
 import android.support.annotation.VisibleForTesting;
 import android.support.v7.widget.RecyclerView;
 import android.text.format.DateUtils;
@@ -148,7 +149,11 @@ class LapsAdapter extends RecyclerView.Adapter<LapsAdapter.LapItemHolder> {
      */
     Lap addLap() {
         final Lap lap = DataModel.getDataModel().addLap();
+        final Vibrator vibrator = (Vibrator) mContext.getSystemService(Context.VIBRATOR_SERVICE);
 
+        if (vibrator.hasVibrator()) {
+            vibrator.vibrate(10);
+        }
         if (getItemCount() == 10) {
             // 10 total laps indicates all items switch from 1 to 2 digit lap numbers.
             notifyDataSetChanged();
@@ -181,6 +186,7 @@ class LapsAdapter extends RecyclerView.Adapter<LapsAdapter.LapItemHolder> {
         final Stopwatch stopwatch = getStopwatch();
         final long totalTime = stopwatch.getTotalTime();
         final String stopwatchTime = formatTime(totalTime, totalTime, ":");
+        final Vibrator vibrator = (Vibrator) mContext.getSystemService(Context.VIBRATOR_SERVICE);
 
         // Choose a size for the builder that is unlikely to be resized.
         final StringBuilder builder = new StringBuilder(1000);
@@ -188,6 +194,10 @@ class LapsAdapter extends RecyclerView.Adapter<LapsAdapter.LapItemHolder> {
         // Add the total elapsed time of the stopwatch.
         builder.append(mContext.getString(R.string.sw_share_main, stopwatchTime));
         builder.append("\n");
+
+        if (vibrator.hasVibrator()) {
+            vibrator.vibrate(10);
+        }
 
         final List<Lap> laps = getLaps();
         if (!laps.isEmpty()) {
