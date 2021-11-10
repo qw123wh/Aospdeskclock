@@ -337,7 +337,7 @@ public final class SettingsActivity extends BaseActivity {
             final SimpleMenuPreference powerButtonPref =
                     (SimpleMenuPreference) findPreference(KEY_POWER_BUTTONS);
             if (powerButtonPref != null) {
-                List<Sensor> sensorList = sensorManager.getSensorList(Sensor.TYPE_ORIENTATION);  // FIXME
+                List<Sensor> sensorList = sensorManager.getSensorList(Sensor.TYPE_ORIENTATION);
                 if (sensorList.size() < 1) { // This will be true if no orientation sensor
                     powerButtonPref.setValue("0"); // Turn it off
                 } else {
