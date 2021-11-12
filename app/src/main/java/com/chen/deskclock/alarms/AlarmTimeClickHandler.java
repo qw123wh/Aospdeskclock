@@ -76,11 +76,16 @@ public final class AlarmTimeClickHandler {
     }
 
     public void setAlarmEnabled(Alarm alarm, boolean newState) {
+        final Vibrator vibrator = (Vibrator) mContext.getSystemService(Context.VIBRATOR_SERVICE);
+
         if (newState != alarm.enabled) {
             alarm.enabled = newState;
             Events.sendAlarmEvent(newState ? R.string.action_enable : R.string.action_disable,
                     R.string.label_deskclock);
             mAlarmUpdateHandler.asyncUpdateAlarm(alarm, alarm.enabled, false);
+            if (vibrator.hasVibrator()) {
+                vibrator.vibrate(10);
+            }
             LOGGER.d("Updating alarm enabled state to " + newState);
         }
     }
@@ -133,6 +138,11 @@ public final class AlarmTimeClickHandler {
     }
 
     public void setDayOfWeekEnabled(Alarm alarm, boolean checked, int index) {
+        final Vibrator vibrator = (Vibrator) mContext.getSystemService(Context.VIBRATOR_SERVICE);
+
+        if (vibrator.hasVibrator()) {
+            vibrator.vibrate(10);
+        }
         final Calendar now = Calendar.getInstance();
         final Calendar oldNextAlarmTime = alarm.getNextAlarmTime(now);
 

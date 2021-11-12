@@ -16,6 +16,15 @@
 
 package com.chen.deskclock.data;
 
+import static android.app.NotificationManager.ACTION_INTERRUPTION_FILTER_CHANGED;
+import static android.app.NotificationManager.INTERRUPTION_FILTER_NONE;
+import static android.content.Context.AUDIO_SERVICE;
+import static android.content.Context.NOTIFICATION_SERVICE;
+import static android.media.AudioManager.STREAM_ALARM;
+import static android.media.RingtoneManager.TYPE_ALARM;
+import static android.provider.Settings.System.CONTENT_URI;
+import static android.provider.Settings.System.DEFAULT_ALARM_ALERT_URI;
+
 import android.annotation.TargetApi;
 import android.app.NotificationManager;
 import android.content.BroadcastReceiver;
@@ -37,15 +46,6 @@ import com.chen.deskclock.data.DataModel.SilentSetting;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import static android.app.NotificationManager.ACTION_INTERRUPTION_FILTER_CHANGED;
-import static android.app.NotificationManager.INTERRUPTION_FILTER_NONE;
-import static android.content.Context.AUDIO_SERVICE;
-import static android.content.Context.NOTIFICATION_SERVICE;
-import static android.media.AudioManager.STREAM_ALARM;
-import static android.media.RingtoneManager.TYPE_ALARM;
-import static android.provider.Settings.System.CONTENT_URI;
-import static android.provider.Settings.System.DEFAULT_ALARM_ALERT_URI;
 
 /**
  * This model fetches and stores reasons that alarms may be suppressed or silenced by system

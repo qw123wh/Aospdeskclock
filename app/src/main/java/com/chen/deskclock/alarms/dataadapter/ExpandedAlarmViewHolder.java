@@ -16,6 +16,9 @@
 
 package com.chen.deskclock.alarms.dataadapter;
 
+import static android.content.Context.VIBRATOR_SERVICE;
+import static android.view.View.TRANSLATION_Y;
+
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.AnimatorSet;
@@ -50,9 +53,6 @@ import com.chen.deskclock.provider.AlarmInstance;
 import com.chen.deskclock.uidata.UiDataModel;
 
 import java.util.List;
-
-import static android.content.Context.VIBRATOR_SERVICE;
-import static android.view.View.TRANSLATION_Y;
 
 /**
  * A ViewHolder containing views for an alarm item in expanded state.
