@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Aospdeskclock.iml" filepath="$PROJECT_DIR$/.idea/modules/Aospdeskclock.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Aospdeskclock.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Aospdeskclock.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Aospdeskclock_Main.iml" filepath="$PROJECT_DIR$/.idea/modules/Aospdeskclock_Main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Aospdeskclock_Main.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Aospdeskclock_Main.app.iml" />
     </modules>
   </component>
 </project>

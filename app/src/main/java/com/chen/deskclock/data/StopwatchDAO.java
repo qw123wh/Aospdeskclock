@@ -16,6 +16,8 @@
 
 package com.chen.deskclock.data;
 
+import static com.chen.deskclock.data.Stopwatch.State.RESET;
+
 import android.content.SharedPreferences;
 
 import com.chen.deskclock.data.Stopwatch.State;
@@ -23,8 +25,6 @@ import com.chen.deskclock.data.Stopwatch.State;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-
-import static com.chen.deskclock.data.Stopwatch.State.RESET;
 
 /**
  * This class encapsulates the transfer of data between {@link Stopwatch} and {@link Lap} domain

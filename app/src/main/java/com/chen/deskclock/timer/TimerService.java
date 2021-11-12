@@ -16,6 +16,8 @@
 
 package com.chen.deskclock.timer;
 
+import static com.chen.deskclock.uidata.UiDataModel.Tab.TIMERS;
+
 import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
@@ -27,8 +29,6 @@ import com.chen.deskclock.data.DataModel;
 import com.chen.deskclock.data.Timer;
 import com.chen.deskclock.events.Events;
 import com.chen.deskclock.uidata.UiDataModel;
-
-import static com.chen.deskclock.uidata.UiDataModel.Tab.TIMERS;
 
 /**
  * <p>This service exists solely to allow {@link android.app.AlarmManager} and timer notifications

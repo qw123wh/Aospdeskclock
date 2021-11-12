@@ -16,6 +16,10 @@
 
 package com.chen.deskclock.timer;
 
+import static com.chen.deskclock.FabContainer.FAB_REQUEST_FOCUS;
+import static com.chen.deskclock.FabContainer.FAB_SHRINK_AND_EXPAND;
+
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.ColorStateList;
 import android.content.res.Resources;
@@ -42,9 +46,6 @@ import com.chen.deskclock.uidata.UiDataModel;
 
 import java.io.Serializable;
 import java.util.Arrays;
-
-import static com.chen.deskclock.FabContainer.FAB_REQUEST_FOCUS;
-import static com.chen.deskclock.FabContainer.FAB_SHRINK_AND_EXPAND;
 
 public class TimerSetupView extends LinearLayout implements View.OnClickListener,
         View.OnLongClickListener {
@@ -181,6 +182,7 @@ public class TimerSetupView extends LinearLayout implements View.OnClickListener
         return false;
     }
 
+    @SuppressLint("NonConstantResourceId")
     private int getDigitForId(@IdRes int id) {
         switch (id) {
             case R.id.timer_setup_digit_0:

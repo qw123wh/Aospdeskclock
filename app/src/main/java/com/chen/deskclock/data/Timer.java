@@ -16,12 +16,6 @@
 
 package com.chen.deskclock.data;
 
-import android.text.TextUtils;
-
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.List;
-
 import static android.text.format.DateUtils.HOUR_IN_MILLIS;
 import static android.text.format.DateUtils.MINUTE_IN_MILLIS;
 import static android.text.format.DateUtils.SECOND_IN_MILLIS;
@@ -32,6 +26,12 @@ import static com.chen.deskclock.data.Timer.State.MISSED;
 import static com.chen.deskclock.data.Timer.State.PAUSED;
 import static com.chen.deskclock.data.Timer.State.RESET;
 import static com.chen.deskclock.data.Timer.State.RUNNING;
+
+import android.text.TextUtils;
+
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.List;
 
 /**
  * A read-only domain object representing a countdown timer.

@@ -25,7 +25,7 @@ import com.chen.deskclock.provider.AlarmInstance;
 
 public class AlarmItemHolder extends ItemAdapter.ItemHolder<Alarm> {
 
-    private static final java.lang.String EXPANDED_KEY = "expanded";
+    private static final String EXPANDED_KEY = "expanded";
     private final AlarmInstance mAlarmInstance;
     private final AlarmTimeClickHandler mAlarmTimeClickHandler;
     private boolean mExpanded;

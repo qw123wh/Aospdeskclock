@@ -16,6 +16,11 @@
 
 package com.chen.deskclock.data;
 
+import static android.app.AlarmManager.ELAPSED_REALTIME_WAKEUP;
+import static android.text.format.DateUtils.MINUTE_IN_MILLIS;
+import static com.chen.deskclock.data.Timer.State.EXPIRED;
+import static com.chen.deskclock.data.Timer.State.RESET;
+
 import android.annotation.SuppressLint;
 import android.app.AlarmManager;
 import android.app.Notification;
@@ -45,11 +50,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Set;
-
-import static android.app.AlarmManager.ELAPSED_REALTIME_WAKEUP;
-import static android.text.format.DateUtils.MINUTE_IN_MILLIS;
-import static com.chen.deskclock.data.Timer.State.EXPIRED;
-import static com.chen.deskclock.data.Timer.State.RESET;
 
 /**
  * All {@link Timer} data is accessed via this model.

@@ -85,7 +85,7 @@ public final class DataModel {
         private final View.OnClickListener mActionListener;
 
         SilentSetting(int labelResId, int actionResId, Predicate<Context> actionEnabled,
-                View.OnClickListener actionListener) {
+                      View.OnClickListener actionListener) {
             mLabelResId = labelResId;
             mActionResId = actionResId;
             mActionEnabled = actionEnabled;
@@ -137,9 +137,9 @@ public final class DataModel {
                         // Attempt to open the notification settings for this app.
                         context.startActivity(
                                 new Intent("android.settings.APP_NOTIFICATION_SETTINGS")
-                                .putExtra("app_package", context.getPackageName())
-                                .putExtra("app_uid", context.getApplicationInfo().uid)
-                                .addFlags(FLAG_ACTIVITY_NEW_TASK));
+                                        .putExtra("app_package", context.getPackageName())
+                                        .putExtra("app_uid", context.getApplicationInfo().uid)
+                                        .addFlags(FLAG_ACTIVITY_NEW_TASK));
                         return;
                     } catch (Exception ignored) {
                         // best attempt only; recovery code below
@@ -722,6 +722,14 @@ public final class DataModel {
     }
 
     /**
+     * @return the behavior to execute when power buttons are pressed while firing an alarm
+     */
+    public AlarmVolumeButtonBehavior getAlarmPowerButtonBehavior() {
+        enforceMainLooper();
+        return mAlarmModel.getAlarmPowerButtonBehavior();
+    }
+
+    /**
      * @return the number of minutes an alarm may ring before it has timed out and becomes missed
      */
     public int getAlarmTimeout() {
@@ -735,14 +743,14 @@ public final class DataModel {
         return mAlarmModel.getSnoozeLength();
     }
 
-     public int getFlipAction() {
+    public int getFlipAction() {
         return mAlarmModel.getFlipAction();
     }
 
     public int getShakeAction() {
         return mAlarmModel.getShakeAction();
     }
-    
+
     //
     // Stopwatch
     //

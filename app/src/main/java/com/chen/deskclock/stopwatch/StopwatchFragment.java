@@ -16,6 +16,14 @@
 
 package com.chen.deskclock.stopwatch;
 
+import static android.R.attr.state_activated;
+import static android.R.attr.state_pressed;
+import static android.graphics.drawable.GradientDrawable.Orientation.TOP_BOTTOM;
+import static android.view.View.GONE;
+import static android.view.View.INVISIBLE;
+import static android.view.View.VISIBLE;
+import static com.chen.deskclock.uidata.UiDataModel.Tab.STOPWATCH;
+
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.ActivityNotFoundException;
@@ -26,6 +34,7 @@ import android.content.res.Resources;
 import android.graphics.Canvas;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
+import android.os.Vibrator;
 import android.support.annotation.ColorInt;
 import android.support.annotation.NonNull;
 import android.support.v4.graphics.ColorUtils;
@@ -57,14 +66,6 @@ import com.chen.deskclock.events.Events;
 import com.chen.deskclock.uidata.TabListener;
 import com.chen.deskclock.uidata.UiDataModel;
 import com.chen.deskclock.uidata.UiDataModel.Tab;
-
-import static android.R.attr.state_activated;
-import static android.R.attr.state_pressed;
-import static android.graphics.drawable.GradientDrawable.Orientation.TOP_BOTTOM;
-import static android.view.View.GONE;
-import static android.view.View.INVISIBLE;
-import static android.view.View.VISIBLE;
-import static com.chen.deskclock.uidata.UiDataModel.Tab.STOPWATCH;
 
 /**
  * Fragment that shows the stopwatch and recorded laps.
@@ -317,6 +318,11 @@ public final class StopwatchFragment extends DeskClockFragment {
      * Start the stopwatch.
      */
     private void doStart() {
+        final Vibrator vibrator = (Vibrator) getActivity().getSystemService(Context.VIBRATOR_SERVICE);
+
+        if (vibrator.hasVibrator()) {
+            vibrator.vibrate(10);
+        }
         Events.sendStopwatchEvent(R.string.action_start, R.string.label_deskclock);
         DataModel.getDataModel().startStopwatch();
     }
@@ -325,6 +331,11 @@ public final class StopwatchFragment extends DeskClockFragment {
      * Pause the stopwatch.
      */
     private void doPause() {
+        final Vibrator vibrator = (Vibrator) getActivity().getSystemService(Context.VIBRATOR_SERVICE);
+
+        if (vibrator.hasVibrator()) {
+            vibrator.vibrate(10);
+        }
         Events.sendStopwatchEvent(R.string.action_pause, R.string.label_deskclock);
         DataModel.getDataModel().pauseStopwatch();
     }
@@ -333,7 +344,12 @@ public final class StopwatchFragment extends DeskClockFragment {
      * Reset the stopwatch.
      */
     private void doReset() {
+        final Vibrator vibrator = (Vibrator) getActivity().getSystemService(Context.VIBRATOR_SERVICE);
         final Stopwatch.State priorState = getStopwatch().getState();
+
+        if (vibrator.hasVibrator()) {
+            vibrator.vibrate(10);
+        }
         Events.sendStopwatchEvent(R.string.action_reset, R.string.label_deskclock);
         DataModel.getDataModel().resetStopwatch();
         mMainTimeText.setAlpha(1f);

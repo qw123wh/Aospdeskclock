@@ -16,6 +16,9 @@
 
 package com.chen.deskclock.data;
 
+import static android.view.View.GONE;
+import static android.view.View.VISIBLE;
+
 import android.app.Notification;
 import android.app.PendingIntent;
 import android.content.Context;
@@ -37,9 +40,6 @@ import com.chen.deskclock.stopwatch.StopwatchService;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import static android.view.View.GONE;
-import static android.view.View.VISIBLE;
 
 /**
  * Builds notification to reflect the latest state of the stopwatch and recorded laps.
@@ -127,7 +127,7 @@ class StopwatchNotificationBuilder {
             content.setViewVisibility(R.id.state, VISIBLE);
         }
 
-        final Builder notification = new NotificationCompat.Builder(context)
+        final Builder notification = new Builder(context)
                 .setLocalOnly(true)
                 .setOngoing(running)
                 .setCustomContentView(content)

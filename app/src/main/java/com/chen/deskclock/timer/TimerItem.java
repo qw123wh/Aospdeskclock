@@ -16,6 +16,9 @@
 
 package com.chen.deskclock.timer;
 
+import static android.R.attr.state_activated;
+import static android.R.attr.state_pressed;
+
 import android.content.Context;
 import android.content.res.ColorStateList;
 import android.os.SystemClock;
@@ -31,9 +34,6 @@ import com.chen.deskclock.ThemeUtils;
 import com.chen.deskclock.TimerTextController;
 import com.chen.deskclock.Utils.ClickAccessibilityDelegate;
 import com.chen.deskclock.data.Timer;
-
-import static android.R.attr.state_activated;
-import static android.R.attr.state_pressed;
 
 /**
  * This view is a visual representation of a {@link Timer}.

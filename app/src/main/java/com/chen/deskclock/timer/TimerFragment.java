@@ -16,6 +16,13 @@
 
 package com.chen.deskclock.timer;
 
+import static android.view.View.ALPHA;
+import static android.view.View.GONE;
+import static android.view.View.INVISIBLE;
+import static android.view.View.TRANSLATION_Y;
+import static android.view.View.VISIBLE;
+import static com.chen.deskclock.uidata.UiDataModel.Tab.TIMERS;
+
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.AnimatorSet;
@@ -51,13 +58,6 @@ import com.chen.deskclock.uidata.UiDataModel;
 
 import java.io.Serializable;
 import java.util.Arrays;
-
-import static android.view.View.ALPHA;
-import static android.view.View.GONE;
-import static android.view.View.INVISIBLE;
-import static android.view.View.TRANSLATION_Y;
-import static android.view.View.VISIBLE;
-import static com.chen.deskclock.uidata.UiDataModel.Tab.TIMERS;
 
 /**
  * Displays a vertical list of timers in all states.

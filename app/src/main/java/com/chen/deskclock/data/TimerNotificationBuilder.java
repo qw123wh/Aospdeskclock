@@ -16,6 +16,11 @@
 
 package com.chen.deskclock.data;
 
+import static android.support.v4.app.NotificationCompat.Action;
+import static android.support.v4.app.NotificationCompat.Builder;
+import static android.text.format.DateUtils.MINUTE_IN_MILLIS;
+import static android.text.format.DateUtils.SECOND_IN_MILLIS;
+
 import android.annotation.TargetApi;
 import android.app.AlarmManager;
 import android.app.Notification;
@@ -40,11 +45,6 @@ import com.chen.deskclock.timer.TimerService;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import static android.support.v4.app.NotificationCompat.Action;
-import static android.support.v4.app.NotificationCompat.Builder;
-import static android.text.format.DateUtils.MINUTE_IN_MILLIS;
-import static android.text.format.DateUtils.SECOND_IN_MILLIS;
 
 /**
  * Builds notifications to reflect the latest state of the timers.
@@ -148,7 +148,7 @@ class TimerNotificationBuilder {
                 PendingIntent.getService(context, REQUEST_CODE_UPCOMING, showApp,
                         PendingIntent.FLAG_ONE_SHOT | PendingIntent.FLAG_UPDATE_CURRENT);
 
-        final Builder notification = new NotificationCompat.Builder(context)
+        final Builder notification = new Builder(context)
                 .setOngoing(true)
                 .setLocalOnly(true)
                 .setShowWhen(false)
@@ -261,7 +261,7 @@ class TimerNotificationBuilder {
                 .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_NO_USER_ACTION);
         final PendingIntent pendingFullScreen = Utils.pendingActivityIntent(context, fullScreen);
 
-        final Builder notification = new NotificationCompat.Builder(context)
+        final Builder notification = new Builder(context)
                 .setOngoing(true)
                 .setLocalOnly(true)
                 .setShowWhen(false)
@@ -344,7 +344,7 @@ class TimerNotificationBuilder {
                 PendingIntent.getService(context, REQUEST_CODE_MISSING, showApp,
                         PendingIntent.FLAG_ONE_SHOT | PendingIntent.FLAG_UPDATE_CURRENT);
 
-        final Builder notification = new NotificationCompat.Builder(context)
+        final Builder notification = new Builder(context)
                 .setLocalOnly(true)
                 .setShowWhen(false)
                 .setAutoCancel(false)

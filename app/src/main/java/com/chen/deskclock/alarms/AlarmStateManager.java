@@ -15,6 +15,9 @@
  */
 package com.chen.deskclock.alarms;
 
+import static android.content.Context.ALARM_SERVICE;
+import static android.provider.Settings.System.NEXT_ALARM_FORMATTED;
+
 import android.annotation.TargetApi;
 import android.app.AlarmManager;
 import android.app.AlarmManager.AlarmClockInfo;
@@ -50,8 +53,6 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-import static android.content.Context.ALARM_SERVICE;
-import static android.provider.Settings.System.NEXT_ALARM_FORMATTED;
 
 /**
  * This class handles all the state changes for alarm instances. You need to
@@ -1006,7 +1007,7 @@ public final class AlarmStateManager extends BroadcastReceiver {
      */
     interface StateChangeScheduler {
         void scheduleInstanceStateChange(Context context, Calendar time,
-                AlarmInstance instance, int newState);
+                                         AlarmInstance instance, int newState);
 
         void cancelScheduledInstanceStateChange(Context context, AlarmInstance instance);
     }

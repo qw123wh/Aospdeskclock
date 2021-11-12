@@ -16,15 +16,15 @@
 
 package com.chen.deskclock.data;
 
+import static android.text.format.DateUtils.HOUR_IN_MILLIS;
+import static android.text.format.DateUtils.MINUTE_IN_MILLIS;
+import static android.text.format.DateUtils.SECOND_IN_MILLIS;
+
 import android.content.Context;
 import android.support.annotation.StringRes;
 
 import com.chen.deskclock.R;
 import com.chen.deskclock.Utils;
-
-import static android.text.format.DateUtils.HOUR_IN_MILLIS;
-import static android.text.format.DateUtils.MINUTE_IN_MILLIS;
-import static android.text.format.DateUtils.SECOND_IN_MILLIS;
 
 public class TimerStringFormatter {
 

@@ -16,6 +16,10 @@
 
 package com.chen.deskclock.settings;
 
+import static android.content.Context.AUDIO_SERVICE;
+import static android.content.Context.NOTIFICATION_SERVICE;
+import static android.media.AudioManager.STREAM_ALARM;
+
 import android.annotation.TargetApi;
 import android.app.NotificationManager;
 import android.content.Context;
@@ -34,10 +38,6 @@ import com.chen.deskclock.R;
 import com.chen.deskclock.RingtonePreviewKlaxon;
 import com.chen.deskclock.Utils;
 import com.chen.deskclock.data.DataModel;
-
-import static android.content.Context.AUDIO_SERVICE;
-import static android.content.Context.NOTIFICATION_SERVICE;
-import static android.media.AudioManager.STREAM_ALARM;
 
 public class AlarmVolumePreference extends Preference {
 
