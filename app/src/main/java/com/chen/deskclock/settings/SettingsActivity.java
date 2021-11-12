@@ -64,7 +64,6 @@ public final class SettingsActivity extends BaseActivity {
     public static final String KEY_AUTO_HOME_CLOCK = "automatic_home_clock";
     public static final String KEY_DATE_TIME = "date_time";
     public static final String KEY_VOLUME_BUTTONS = "volume_button_setting";
-    public static final String KEY_POWER_BUTTONS = "power_button";
     public static final String KEY_WEEK_START = "week_start";
     public static final String KEY_FLIP_ACTION = "flip_action";
     public static final String KEY_SHAKE_ACTION = "shake_action";
@@ -72,10 +71,6 @@ public final class SettingsActivity extends BaseActivity {
     public static final String DEFAULT_VOLUME_BEHAVIOR = "0";
     public static final String VOLUME_BEHAVIOR_SNOOZE = "1";
     public static final String VOLUME_BEHAVIOR_DISMISS = "2";
-
-    public static final String DEFAULT_POWER_BEHAVIOR = "0";
-    public static final String POWER_BEHAVIOR_SNOOZE = "1";
-    public static final String POWER_BEHAVIOR_DISMISS = "2";
 
     public static final String PREFS_FRAGMENT_TAG = "prefs_fragment";
     public static final String PREFERENCE_DIALOG_FRAGMENT_TAG = "preference_dialog";
@@ -182,7 +177,6 @@ public final class SettingsActivity extends BaseActivity {
                 case KEY_CLOCK_STYLE:
                 case KEY_WEEK_START:
                 case KEY_VOLUME_BUTTONS:
-                case KEY_POWER_BUTTONS:
                 case KEY_FLIP_ACTION:
                 case KEY_SHAKE_ACTION:   
                     final SimpleMenuPreference simpleMenuPreference = (SimpleMenuPreference) pref;
@@ -336,19 +330,7 @@ public final class SettingsActivity extends BaseActivity {
                     flipActionPref.setSummary(flipActionPref.getEntry());
                     flipActionPref.setOnPreferenceChangeListener(this);
                 }
-        }
-
-            final SimpleMenuPreference powerButtonPref =
-                    (SimpleMenuPreference) findPreference(KEY_POWER_BUTTONS);
-            if (powerButtonPref != null) {
-                List<Sensor> sensorList = sensorManager.getSensorList(Sensor.TYPE_ORIENTATION);
-                if (sensorList.size() < 1) { // This will be true if no orientation sensor
-                    powerButtonPref.setValue("0"); // Turn it off
-                } else {
-                    powerButtonPref.setSummary(powerButtonPref.getEntry());
-                    powerButtonPref.setOnPreferenceChangeListener(this);
-                }
-        }
+        }    
 
             final SimpleMenuPreference shakeActionPref =
                     (SimpleMenuPreference) findPreference(KEY_SHAKE_ACTION);

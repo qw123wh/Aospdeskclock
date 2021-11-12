@@ -95,6 +95,7 @@ public class TimerSetupView extends LinearLayout implements View.OnClickListener
         mDeleteView = findViewById(R.id.timer_setup_delete);
         mDividerView = findViewById(R.id.timer_setup_divider);
         mDigitViews = new TextView[] {
+                (TextView) findViewById(R.id.timer_setup_digit_00),
                 (TextView) findViewById(R.id.timer_setup_digit_0),
                 (TextView) findViewById(R.id.timer_setup_digit_1),
                 (TextView) findViewById(R.id.timer_setup_digit_2),
@@ -185,6 +186,8 @@ public class TimerSetupView extends LinearLayout implements View.OnClickListener
     @SuppressLint("NonConstantResourceId")
     private int getDigitForId(@IdRes int id) {
         switch (id) {
+            case R.id.timer_setup_digit_00:
+                return 00;
             case R.id.timer_setup_digit_0:
                 return 0;
             case R.id.timer_setup_digit_1:

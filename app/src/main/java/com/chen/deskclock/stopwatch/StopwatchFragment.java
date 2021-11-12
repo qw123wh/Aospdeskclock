@@ -344,6 +344,11 @@ public final class StopwatchFragment extends DeskClockFragment {
      * Reset the stopwatch.
      */
     private void doReset() {
+        final Vibrator vibrator = (Vibrator) getActivity().getSystemService(Context.VIBRATOR_SERVICE);
+
+        if (vibrator.hasVibrator()) {
+            vibrator.vibrate(10);
+        }
         final Stopwatch.State priorState = getStopwatch().getState();
         final Vibrator vibrator = (Vibrator) getActivity().getSystemService(Context.VIBRATOR_SERVICE);
 
