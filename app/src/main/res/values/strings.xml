@@ -465,6 +465,9 @@
     <!-- Setting title for the shake action setting. -->
     <string name="shake_action_title" tools:ignore="MissingTranslation">Device shake action</string>
 
+    <!-- Setting title for the power button setting. -->
+    <string name="power_button_title" tools:ignore="MissingTranslation">Power button</string>
+
     <!-- Entries listed in the setting flip and shake. -->
     <string-array name="action_setting_entries" tools:ignore="MissingTranslation">
         <item>Snooze</item>

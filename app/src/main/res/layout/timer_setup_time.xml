@@ -38,14 +38,4 @@
         android:textSize="@dimen/timer_setup_digit_font_size"
         tools:targetApi="21" />
 
-    <ImageButton
-        android:id="@+id/timer_setup_delete"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/timer_setup_delete_margin"
-        android:contentDescription="@string/timer_delete"
-        android:padding="12dp"
-        android:scaleType="center"
-        app:srcCompat="@drawable/ic_backspace" />
-
 </LinearLayout>

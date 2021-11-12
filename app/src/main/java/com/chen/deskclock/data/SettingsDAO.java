@@ -16,6 +16,18 @@
 
 package com.chen.deskclock.data;
 
+import static android.text.format.DateUtils.HOUR_IN_MILLIS;
+import static android.text.format.DateUtils.MINUTE_IN_MILLIS;
+import static com.chen.deskclock.data.DataModel.AlarmVolumeButtonBehavior.DISMISS;
+import static com.chen.deskclock.data.DataModel.AlarmVolumeButtonBehavior.NOTHING;
+import static com.chen.deskclock.data.DataModel.AlarmVolumeButtonBehavior.SNOOZE;
+import static com.chen.deskclock.data.Weekdays.Order.MON_TO_SUN;
+import static com.chen.deskclock.data.Weekdays.Order.SAT_TO_FRI;
+import static com.chen.deskclock.data.Weekdays.Order.SUN_TO_SAT;
+import static java.util.Calendar.MONDAY;
+import static java.util.Calendar.SATURDAY;
+import static java.util.Calendar.SUNDAY;
+
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
@@ -35,18 +47,6 @@ import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Locale;
 import java.util.TimeZone;
-
-import static android.text.format.DateUtils.HOUR_IN_MILLIS;
-import static android.text.format.DateUtils.MINUTE_IN_MILLIS;
-import static com.chen.deskclock.data.DataModel.AlarmVolumeButtonBehavior.DISMISS;
-import static com.chen.deskclock.data.DataModel.AlarmVolumeButtonBehavior.NOTHING;
-import static com.chen.deskclock.data.DataModel.AlarmVolumeButtonBehavior.SNOOZE;
-import static com.chen.deskclock.data.Weekdays.Order.MON_TO_SUN;
-import static com.chen.deskclock.data.Weekdays.Order.SAT_TO_FRI;
-import static com.chen.deskclock.data.Weekdays.Order.SUN_TO_SAT;
-import static java.util.Calendar.MONDAY;
-import static java.util.Calendar.SATURDAY;
-import static java.util.Calendar.SUNDAY;
 
 /**
  * This class encapsulates the storage of application preferences in {@link SharedPreferences}.
@@ -289,6 +289,21 @@ final class SettingsDAO {
             case SettingsActivity.VOLUME_BEHAVIOR_DISMISS: return DISMISS;
             default:
                 throw new IllegalArgumentException("Unknown volume button behavior: " + value);
+        }
+    }
+
+    /**
+     * @return the behavior to execute when power buttons are pressed while firing an alarm
+     */
+    static AlarmVolumeButtonBehavior getAlarmPowerButtonBehavior(SharedPreferences prefs) {
+        final String defaultValue = SettingsActivity.DEFAULT_POWER_BEHAVIOR;
+        final String value = prefs.getString(SettingsActivity.KEY_POWER_BUTTONS, defaultValue);
+        switch (value) {
+            case SettingsActivity.DEFAULT_POWER_BEHAVIOR: return NOTHING;
+            case SettingsActivity.POWER_BEHAVIOR_SNOOZE: return SNOOZE;
+            case SettingsActivity.POWER_BEHAVIOR_DISMISS: return DISMISS;
+            default:
+                throw new IllegalArgumentException("Unknown power button behavior: " + value);
         }
     }
 
