@@ -299,21 +299,21 @@ public class AlarmActivity extends BaseActivity
                 if (intent.getAction().equals(Intent.ACTION_SCREEN_OFF)
                         || intent.getAction().equals(Intent.ACTION_SCREEN_ON)) {
                     // Power keys dismiss the alarm.
-                    if (!mAlarmHandled) {
-                        if (mPowerBehavior == AlarmVolumeButtonBehavior.SNOOZE) {
-                            snooze();
+                        if (!mAlarmHandled) {
+                            if (mPowerBehavior == AlarmVolumeButtonBehavior.SNOOZE) {
+                                snooze();
+                            }
+                            else if (mPowerBehavior == AlarmVolumeButtonBehavior.DISMISS){
+                                dismiss();
+                            }
                         }
-                        else if (mPowerBehavior == AlarmVolumeButtonBehavior.DISMISS){
-                            dismiss();
-                        }
-                    }
                 }
-            }
+        }
         }
     };
 
     @Override
-    public boolean dispatchKeyEvent(@NonNull KeyEvent keyEvent) {
+        public boolean dispatchKeyEvent(@NonNull KeyEvent keyEvent) {
         // Do this in dispatch to intercept a few of the system keys.
         LOGGER.v("dispatchKeyEvent: %s", keyEvent);
 
