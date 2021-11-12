@@ -458,8 +458,8 @@
         <item>2</item>
         <item>0</item>
     </string-array>
-  
-  <!-- Setting title for the flip action setting. -->
+
+    <!-- Setting title for the flip action setting. -->
     <string name="flip_action_title" tools:ignore="MissingTranslation">Device flip action</string>
 
     <!-- Setting title for the shake action setting. -->
@@ -1084,5 +1084,6 @@
     [CHAR LIMIT=NONE]
     -->
     <string name="alarm_is_snoozed"><xliff:g id="alarm_time" example="14:20">%s</xliff:g> alarm snoozed for 10 minutes</string>
+    <string name="delete_key" tools:ignore="MissingTranslation" />
 
 </resources>
