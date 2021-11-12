@@ -722,6 +722,14 @@ public final class DataModel {
     }
 
     /**
+     * @return the behavior to execute when power buttons are pressed while firing an alarm
+     */
+    public AlarmVolumeButtonBehavior getAlarmPowerButtonBehavior() {
+        enforceMainLooper();
+        return mAlarmModel.getAlarmPowerButtonBehavior();
+    }
+
+    /**
      * @return the number of minutes an alarm may ring before it has timed out and becomes missed
      */
     public int getAlarmTimeout() {

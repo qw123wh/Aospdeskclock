@@ -24,7 +24,9 @@ import android.app.Fragment;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.RequiresApi;
 import android.support.annotation.StringRes;
 import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
@@ -143,6 +145,7 @@ public class DeskClock extends BaseActivity
         setIntent(newIntent);
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -471,6 +474,7 @@ public class DeskClock extends BaseActivity
         }
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.M)
     private void checkPermissions() {
         if (checkSelfPermission(PERMISSION_POWER_OFF_ALARM)
                 != PackageManager.PERMISSION_GRANTED) {
@@ -672,7 +676,7 @@ public class DeskClock extends BaseActivity
     private final class TabChangeWatcher implements TabListener {
         @Override
         public void selectedTabChanged(UiDataModel.Tab oldSelectedTab,
-                UiDataModel.Tab newSelectedTab) {
+                                       UiDataModel.Tab newSelectedTab) {
             // Update the view pager and tab layout to agree with the model.
             updateCurrentTab();
 
